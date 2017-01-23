@@ -8,6 +8,20 @@
 
 import UIKit
 
+enum ShortcutIdentifier: String {
+    case OpenAnimals
+    case OpenFox
+    case OpenRandomAnimal
+    case OpenRelax
+    
+    init?(identifier: String) {
+        guard let shortIdentifier = identifier.components(separatedBy: ".").last else {
+            return nil
+        }
+        self.init(rawValue: shortIdentifier)
+    }
+}
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -41,6 +55,44 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
-
+    
+    // MARK: Shortcut Handler Methods
+    
+    func application(_ application: UIApplication, performActionFor shortcutItem: UIApplicationShortcutItem, completionHandler: @escaping (Bool) -> Void) {
+        completionHandler(shouldPerformActionFor(shortcutItem: shortcutItem))
+    }
+    
+    private func shouldPerformActionFor(shortcutItem: UIApplicationShortcutItem) -> Bool {
+        let shortcutType = shortcutItem.type
+        guard let shortcutIdentifier = ShortcutIdentifier(identifier: shortcutType) else {
+            return false
+        }
+        return selectTabBarItemFor(shortcutIdentifier: shortcutIdentifier)
+    }
+    
+    private func selectTabBarItemFor(shortcutIdentifier: ShortcutIdentifier) -> Bool {
+        guard let myTabBar = self.window?.rootViewController as? UITabBarController else {
+            return false
+        }
+        
+        switch shortcutIdentifier {
+        case .OpenAnimals:
+            myTabBar.selectedIndex = 0
+            return true
+        case .OpenRelax:
+            myTabBar.selectedIndex = 1
+            return true
+        case .OpenFox, .OpenRandomAnimal:
+            myTabBar.selectedIndex = 0
+            guard let nvc = myTabBar.selectedViewController as? UINavigationController else {
+                return false
+            }
+            guard let vc = nvc.viewControllers.first as? AnimalsViewController else {
+                return false
+            }
+            nvc.popToRootViewController(animated: false)
+            return vc.openAnimalFor(shortcutIdentifier: shortcutIdentifier)
+        }
+    }
 }
 

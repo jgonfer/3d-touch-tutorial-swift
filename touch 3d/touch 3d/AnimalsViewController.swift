@@ -42,6 +42,24 @@ class AnimalsViewController: UIViewController {
         }
     }
     
+    func openAnimalFor(shortcutIdentifier: ShortcutIdentifier) -> Bool {
+        switch shortcutIdentifier {
+        case .OpenFox:
+            selectedIndex = IndexPath(row: 1, section: 0)
+            performSegue(withIdentifier: segueIdentifier, sender: nil)
+        case .OpenRandomAnimal:
+            guard let animals = self.animals else {
+                return false
+            }
+            let randomNumber = Int(arc4random_uniform(UInt32(animals.count)))
+            selectedIndex = IndexPath(row: randomNumber, section: 0)
+            performSegue(withIdentifier: segueIdentifier, sender: nil)
+        default:
+            return false
+        }
+        return true
+    }
+    
     private func setupView() {
         title = "Animals"
         

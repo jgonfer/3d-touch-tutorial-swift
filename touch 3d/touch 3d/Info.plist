@@ -51,5 +51,64 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>UIApplicationShortcutItems</key>
+	<array>
+		<dict>
+			<key>UIApplicationShortcutItemIconFile</key>
+			<string>quickActionAnimals</string>
+			<key>UIApplicationShortcutItemTitle</key>
+			<string>quickActionTitleAnimals</string>
+			<key>UIApplicationShortcutItemSubtitle</key>
+			<string>quickActionSubtitleAnimals</string>
+			<key>UIApplicationShortcutItemType</key>
+			<string>$(PRODUCT_BUNDLE_IDENTIFIER).OpenAnimals</string>
+			<key>UIApplicationShortcutItemUserInfo</key>
+			<dict>
+				<key>version</key>
+				<string>${APP_VERSION}</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>UIApplicationShortcutItemIconFile</key>
+			<string>quickActionFox</string>
+			<key>UIApplicationShortcutItemTitle</key>
+			<string>quickActionTitleFox</string>
+			<key>UIApplicationShortcutItemType</key>
+			<string>$(PRODUCT_BUNDLE_IDENTIFIER).OpenFox</string>
+			<key>UIApplicationShortcutItemUserInfo</key>
+			<dict>
+				<key>version</key>
+				<string>${APP_VERSION}</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>UIApplicationShortcutItemIconFile</key>
+			<string>quickActionAnimals</string>
+			<key>UIApplicationShortcutItemTitle</key>
+			<string>quickActionTitleRandom</string>
+			<key>UIApplicationShortcutItemType</key>
+			<string>$(PRODUCT_BUNDLE_IDENTIFIER).OpenRandomAnimal</string>
+			<key>UIApplicationShortcutItemUserInfo</key>
+			<dict>
+				<key>version</key>
+				<string>${APP_VERSION}</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>UIApplicationShortcutItemIconFile</key>
+			<string>quickActionRelax</string>
+			<key>UIApplicationShortcutItemTitle</key>
+			<string>quickActionTitleRelax</string>
+			<key>UIApplicationShortcutItemSubtitle</key>
+			<string>quickActionSubtitleRelax</string>
+			<key>UIApplicationShortcutItemType</key>
+			<string>$(PRODUCT_BUNDLE_IDENTIFIER).OpenRelax</string>
+			<key>UIApplicationShortcutItemUserInfo</key>
+			<dict>
+				<key>version</key>
+				<string>${APP_VERSION}</string>
+			</dict>
+		</dict>
+	</array>
 </dict>
 </plist>

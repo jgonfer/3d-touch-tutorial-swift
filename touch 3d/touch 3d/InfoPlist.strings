@@ -1,0 +1,16 @@
+/* 
+  InfoPlist.strings
+  touch 3d
+
+  Created by jgonzalez on 20/1/17.
+  Copyright © 2017 jgonfer. All rights reserved.
+*/
+
+"quickActionTitleAnimals" = "Animals";
+"quickActionSubtitleAnimals" = "Everybody loves them!";
+"quickActionTitleFox" = "About Foxes";
+"quickActionTitleRandom" = "Random Animal";
+"quickActionTitleRelax" = "Relax";
+"quickActionSubtitleRelax" = "Touch the screen";
+"quickActionTitlePlus" = "Increment Badge";
+"quickActionTitleMinus" = "Clear Badge";

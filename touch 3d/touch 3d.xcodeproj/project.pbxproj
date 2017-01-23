@@ -16,6 +16,7 @@
 		1D63DBC91E320AE8008143EF /* touch_3dUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D63DBC81E320AE8008143EF /* touch_3dUITests.swift */; };
 		1DB771FE1E32305F00AAF862 /* ItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB771FD1E32305F00AAF862 /* ItemViewController.swift */; };
 		1DB772001E324FBD00AAF862 /* RelaxViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB771FF1E324FBD00AAF862 /* RelaxViewController.swift */; };
+		1DB772021E32556400AAF862 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1DB772011E32556400AAF862 /* InfoPlist.strings */; };
 		1DFB04E81E321C7400810FF4 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DFB04E71E321C7400810FF4 /* Item.swift */; };
 /* End PBXBuildFile section */
 
@@ -52,6 +53,7 @@
 		1D63DBCA1E320AE8008143EF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1DB771FD1E32305F00AAF862 /* ItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemViewController.swift; sourceTree = "<group>"; };
 		1DB771FF1E324FBD00AAF862 /* RelaxViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RelaxViewController.swift; sourceTree = "<group>"; };
+		1DB772011E32556400AAF862 /* InfoPlist.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = InfoPlist.strings; sourceTree = "<group>"; };
 		1DFB04E71E321C7400810FF4 /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -111,6 +113,7 @@
 				1D63DBAC1E320AE8008143EF /* Main.storyboard */,
 				1D63DBAF1E320AE8008143EF /* Assets.xcassets */,
 				1D63DBB11E320AE8008143EF /* LaunchScreen.storyboard */,
+				1DB772011E32556400AAF862 /* InfoPlist.strings */,
 				1D63DBB41E320AE8008143EF /* Info.plist */,
 			);
 			path = "touch 3d";
@@ -243,6 +246,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1D63DBB31E320AE8008143EF /* LaunchScreen.storyboard in Resources */,
+				1DB772021E32556400AAF862 /* InfoPlist.strings in Resources */,
 				1D63DBB01E320AE8008143EF /* Assets.xcassets in Resources */,
 				1D63DBAE1E320AE8008143EF /* Main.storyboard in Resources */,
 			);
