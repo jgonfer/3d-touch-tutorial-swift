@@ -28,6 +28,10 @@ class AnimalsViewController: UIViewController {
         super.viewDidLoad()
         
         setupView()
+        
+        if traitCollection.forceTouchCapability == .available {
+            registerForPreviewing(with: self, sourceView: view)
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -46,7 +50,8 @@ class AnimalsViewController: UIViewController {
             guard let vc = segue.destination as? AnimalDetailViewController, let selectedIndex = self.selectedIndex, let animals = self.animals else {
                 return
             }
-            vc.animal = animals[selectedIndex.row]
+            let animal = animals[selectedIndex.row]
+            vc.animal = animal
         }
     }
     
@@ -143,3 +148,40 @@ extension AnimalsViewController: UITableViewDelegate, UITableViewDataSource {
     }
 }
 
+extension AnimalsViewController: UIViewControllerPreviewingDelegate {
+    func previewingContext(_ previewingContext: UIViewControllerPreviewing, viewControllerForLocation location: CGPoint) -> UIViewController? {
+        var heightOffset = UIApplication.shared.statusBarFrame.height
+        if let navigationController = navigationController {
+            heightOffset += navigationController.navigationBar.frame.height
+        }
+        let newLocation = CGPoint(x: location.x, y: location.y - heightOffset)
+        guard let indexPath = tableView.indexPathForRow(at: newLocation) else {
+            return nil
+        }
+        guard let cell = tableView.cellForRow(at: indexPath) else {
+            return nil
+        }
+        guard let animals = animals, animals.count >= indexPath.row else {
+            return nil
+        }
+        guard let animalDetailVC = storyboard?.instantiateViewController(withIdentifier: "AnimalDetailVC") as? AnimalDetailViewController else { return nil
+        }
+        
+        selectedIndex = indexPath
+        let animal = animals[indexPath.row]
+        animalDetailVC.animal = animal
+        let screenWidth = UIScreen.main.bounds.width
+        let screenHeight = UIScreen.main.bounds.height
+        animalDetailVC.preferredContentSize = CGSize(width: screenWidth, height: screenHeight - 300)
+        
+        var previewFrame = cell.frame
+        previewFrame.origin.y += heightOffset
+        previewingContext.sourceRect = previewFrame
+        
+        return animalDetailVC
+    }
+    
+    func previewingContext(_ previewingContext: UIViewControllerPreviewing, commit viewControllerToCommit: UIViewController) {
+        performSegue(withIdentifier: segueIdentifier, sender: nil)
+    }
+}

@@ -14,7 +14,7 @@
         <!--Animals-->
         <scene sceneID="hNz-n2-bh7">
             <objects>
-                <viewController title="Animals" id="9pv-A4-QxB" customClass="AnimalsViewController" customModule="_D_Touch" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Animals" extendedLayoutIncludesOpaqueBars="YES" id="9pv-A4-QxB" customClass="AnimalsViewController" customModule="_D_Touch" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Ia1-K6-d13"/>
                         <viewControllerLayoutGuide type="bottom" id="4ug-Mw-9AY"/>
@@ -53,7 +53,7 @@
         <!--Animal Detail View Controller-->
         <scene sceneID="LAK-zE-5UR">
             <objects>
-                <viewController id="k5c-bc-o2T" customClass="AnimalDetailViewController" customModule="_D_Touch" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AnimalDetailVC" id="k5c-bc-o2T" customClass="AnimalDetailViewController" customModule="_D_Touch" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="eMH-fM-PXB"/>
                         <viewControllerLayoutGuide type="bottom" id="6qt-fF-5YH"/>
@@ -63,19 +63,19 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Cke-rK-dzz">
-                                <rect key="frame" x="93.5" y="164" width="187.5" height="172"/>
+                                <rect key="frame" x="94" y="164" width="187" height="172"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Cke-rK-dzz" secondAttribute="height" multiplier="12:11" id="8kk-FA-MtH"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JIU-X8-xpr">
-                                <rect key="frame" x="46.5" y="375" width="281" height="20.5"/>
+                                <rect key="frame" x="47" y="375" width="281" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hnr-mc-IKh">
-                                <rect key="frame" x="169.5" y="430" width="36" height="31"/>
+                                <rect key="frame" x="170" y="431" width="36" height="31"/>
                                 <state key="normal" image="like_off"/>
                                 <connections>
                                     <action selector="toggleLikeState:" destination="k5c-bc-o2T" eventType="touchUpInside" id="5Xp-se-NPE"/>
