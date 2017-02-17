@@ -83,7 +83,7 @@
 		</dict>
 		<dict>
 			<key>UIApplicationShortcutItemIconFile</key>
-			<string>quickActionAnimals</string>
+			<string>quickActionRandomAnimal</string>
 			<key>UIApplicationShortcutItemTitle</key>
 			<string>quickActionTitleRandom</string>
 			<key>UIApplicationShortcutItemType</key>
