@@ -27,7 +27,9 @@ class AnimalsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setupView()
+        if animals == nil {
+            setupView()
+        }
         
         if traitCollection.forceTouchCapability == .available {
             registerForPreviewing(with: self, sourceView: view)
@@ -38,6 +40,7 @@ class AnimalsViewController: UIViewController {
         super.viewWillAppear(animated)
         
         guard let index = selectedIndex else {
+            tableView.reloadData()
             return
         }
         updateAnimalState(atIndex: index)
@@ -63,10 +66,10 @@ class AnimalsViewController: UIViewController {
             selectedIndex = IndexPath(row: 1, section: 0)
             performSegue(withIdentifier: segueIdentifier, sender: nil)
         case .OpenRandomAnimal:
-            guard let animals = self.animals else {
-                return false
+            if animals == nil {
+                setupView()
             }
-            let randomNumber = Int(arc4random_uniform(UInt32(animals.count)))
+            let randomNumber = Int(arc4random_uniform(UInt32(animals!.count)))
             selectedIndex = IndexPath(row: randomNumber, section: 0)
             performSegue(withIdentifier: segueIdentifier, sender: nil)
         default:
