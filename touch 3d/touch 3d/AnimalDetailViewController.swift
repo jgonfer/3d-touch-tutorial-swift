@@ -9,11 +9,15 @@
 import Foundation
 import UIKit
 
+protocol AnimalDetailViewControllerDelegate {
+    func updateAnimalCellState()
+}
 class AnimalDetailViewController: UIViewController {
     @IBOutlet weak var animalImage: UIImageView!
     @IBOutlet weak var animalName: UILabel!
     @IBOutlet weak var likeButton: UIButton!
 
+    var delegate: AnimalDetailViewControllerDelegate?
     var animal: Animal?
     
     override func viewDidLoad() {
@@ -24,6 +28,19 @@ class AnimalDetailViewController: UIViewController {
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+    
+    override var previewActionItems: [UIPreviewActionItem] {
+        guard let animal = animal else {
+            return []
+        }
+        let like = animal.getLike()
+        let likeAction = UIPreviewAction(title: like ? "Unlike" : "Like", style: like ? .destructive : .default) {
+            (action, viewController) -> Void in
+            animal.toggleLikeState()
+            self.delegate?.updateAnimalCellState()
+        }
+        return [likeAction]
     }
     
     private func setupView() {

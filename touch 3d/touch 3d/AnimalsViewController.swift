@@ -34,7 +34,9 @@ class AnimalsViewController: UIViewController {
         }
     }
     
-    override func viewDidAppear(_ animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
         guard let index = selectedIndex else {
             return
         }
@@ -169,6 +171,7 @@ extension AnimalsViewController: UIViewControllerPreviewingDelegate {
         
         selectedIndex = indexPath
         let animal = animals[indexPath.row]
+        animalDetailVC.delegate = self
         animalDetailVC.animal = animal
         let screenWidth = UIScreen.main.bounds.width
         let screenHeight = UIScreen.main.bounds.height
@@ -183,5 +186,14 @@ extension AnimalsViewController: UIViewControllerPreviewingDelegate {
     
     func previewingContext(_ previewingContext: UIViewControllerPreviewing, commit viewControllerToCommit: UIViewController) {
         performSegue(withIdentifier: segueIdentifier, sender: nil)
+    }
+}
+
+extension AnimalsViewController: AnimalDetailViewControllerDelegate {
+    func updateAnimalCellState() {
+        guard let selectedIndex = selectedIndex else {
+            return
+        }
+        updateAnimalState(atIndex: selectedIndex)
     }
 }
