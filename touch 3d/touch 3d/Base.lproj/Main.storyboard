@@ -5,6 +5,7 @@
     </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -13,7 +14,7 @@
         <!--Animals-->
         <scene sceneID="hNz-n2-bh7">
             <objects>
-                <viewController title="Animals" id="9pv-A4-QxB" customClass="AnimalsViewController" customModule="_D_Touch" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Animals" extendedLayoutIncludesOpaqueBars="YES" id="9pv-A4-QxB" customClass="AnimalsViewController" customModule="_D_Touch" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Ia1-K6-d13"/>
                         <viewControllerLayoutGuide type="bottom" id="4ug-Mw-9AY"/>
@@ -49,10 +50,10 @@
             </objects>
             <point key="canvasLocation" x="1688.8" y="-320.68965517241384"/>
         </scene>
-        <!--Item View Controller-->
+        <!--Animal Detail View Controller-->
         <scene sceneID="LAK-zE-5UR">
             <objects>
-                <viewController id="k5c-bc-o2T" customClass="ItemViewController" customModule="_D_Touch" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AnimalDetailVC" id="k5c-bc-o2T" customClass="AnimalDetailViewController" customModule="_D_Touch" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="eMH-fM-PXB"/>
                         <viewControllerLayoutGuide type="bottom" id="6qt-fF-5YH"/>
@@ -62,31 +63,41 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Cke-rK-dzz">
-                                <rect key="frame" x="93.5" y="164" width="187.5" height="172"/>
+                                <rect key="frame" x="94" y="164" width="187" height="172"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Cke-rK-dzz" secondAttribute="height" multiplier="12:11" id="8kk-FA-MtH"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JIU-X8-xpr">
-                                <rect key="frame" x="46.5" y="375" width="281" height="20.5"/>
+                                <rect key="frame" x="47" y="375" width="281" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hnr-mc-IKh">
+                                <rect key="frame" x="170" y="431" width="36" height="31"/>
+                                <state key="normal" image="like_off"/>
+                                <connections>
+                                    <action selector="toggleLikeState:" destination="k5c-bc-o2T" eventType="touchUpInside" id="5Xp-se-NPE"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="JIU-X8-xpr" firstAttribute="centerX" secondItem="Cke-rK-dzz" secondAttribute="centerX" id="0ys-GU-7TN"/>
                             <constraint firstItem="Cke-rK-dzz" firstAttribute="centerX" secondItem="eud-fh-9uZ" secondAttribute="centerX" id="2kj-LT-FSx"/>
+                            <constraint firstItem="hnr-mc-IKh" firstAttribute="centerY" secondItem="JIU-X8-xpr" secondAttribute="bottom" constant="50" id="5qn-Nb-nXv"/>
                             <constraint firstItem="Cke-rK-dzz" firstAttribute="centerY" secondItem="eud-fh-9uZ" secondAttribute="centerY" multiplier="0.75" id="DL7-Lk-iwE"/>
                             <constraint firstItem="Cke-rK-dzz" firstAttribute="width" secondItem="eud-fh-9uZ" secondAttribute="width" multiplier="0.5" id="V72-J2-bAg"/>
                             <constraint firstItem="JIU-X8-xpr" firstAttribute="top" secondItem="Cke-rK-dzz" secondAttribute="bottom" constant="39" id="r1o-b5-f4D"/>
                             <constraint firstItem="JIU-X8-xpr" firstAttribute="width" secondItem="eud-fh-9uZ" secondAttribute="width" multiplier="0.75" id="s0u-eF-nZL"/>
+                            <constraint firstItem="hnr-mc-IKh" firstAttribute="centerX" secondItem="eud-fh-9uZ" secondAttribute="centerX" id="vVI-Ni-RxK"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="itemImage" destination="Cke-rK-dzz" id="Efy-8y-ETS"/>
-                        <outlet property="itemName" destination="JIU-X8-xpr" id="zSk-yy-cKl"/>
+                        <outlet property="animalImage" destination="Cke-rK-dzz" id="sEa-7o-yCB"/>
+                        <outlet property="animalName" destination="JIU-X8-xpr" id="xEN-Zh-H85"/>
+                        <outlet property="likeButton" destination="hnr-mc-IKh" id="zQ6-6q-08s"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="teb-jS-fZj" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -169,6 +180,7 @@
     </scenes>
     <resources>
         <image name="animals" width="40" height="34"/>
+        <image name="like_off" width="36" height="31"/>
         <image name="relax" width="40" height="40"/>
     </resources>
 </document>
