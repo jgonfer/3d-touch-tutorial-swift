@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1D40524D1E56FFD800155815 /* UIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D40524C1E56FFD800155815 /* UIButtonExtension.swift */; };
 		1D63DBA71E320AE8008143EF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D63DBA61E320AE8008143EF /* AppDelegate.swift */; };
 		1D63DBA91E320AE8008143EF /* AnimalsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D63DBA81E320AE8008143EF /* AnimalsViewController.swift */; };
 		1D63DBAE1E320AE8008143EF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1D63DBAC1E320AE8008143EF /* Main.storyboard */; };
@@ -14,10 +15,10 @@
 		1D63DBB31E320AE8008143EF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1D63DBB11E320AE8008143EF /* LaunchScreen.storyboard */; };
 		1D63DBBE1E320AE8008143EF /* touch_3dTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D63DBBD1E320AE8008143EF /* touch_3dTests.swift */; };
 		1D63DBC91E320AE8008143EF /* touch_3dUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D63DBC81E320AE8008143EF /* touch_3dUITests.swift */; };
-		1DB771FE1E32305F00AAF862 /* ItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB771FD1E32305F00AAF862 /* ItemViewController.swift */; };
+		1DB771FE1E32305F00AAF862 /* AnimalDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB771FD1E32305F00AAF862 /* AnimalDetailViewController.swift */; };
 		1DB772001E324FBD00AAF862 /* RelaxViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB771FF1E324FBD00AAF862 /* RelaxViewController.swift */; };
 		1DB772021E32556400AAF862 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1DB772011E32556400AAF862 /* InfoPlist.strings */; };
-		1DFB04E81E321C7400810FF4 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DFB04E71E321C7400810FF4 /* Item.swift */; };
+		1DFB04E81E321C7400810FF4 /* Animal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DFB04E71E321C7400810FF4 /* Animal.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +39,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1D40524C1E56FFD800155815 /* UIButtonExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIButtonExtension.swift; sourceTree = "<group>"; };
 		1D63DBA31E320AE8008143EF /* 3D Touch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "3D Touch.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D63DBA61E320AE8008143EF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1D63DBA81E320AE8008143EF /* AnimalsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalsViewController.swift; sourceTree = "<group>"; };
@@ -51,10 +53,10 @@
 		1D63DBC41E320AE8008143EF /* touch 3dUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "touch 3dUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D63DBC81E320AE8008143EF /* touch_3dUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = touch_3dUITests.swift; sourceTree = "<group>"; };
 		1D63DBCA1E320AE8008143EF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1DB771FD1E32305F00AAF862 /* ItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemViewController.swift; sourceTree = "<group>"; };
+		1DB771FD1E32305F00AAF862 /* AnimalDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimalDetailViewController.swift; sourceTree = "<group>"; };
 		1DB771FF1E324FBD00AAF862 /* RelaxViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RelaxViewController.swift; sourceTree = "<group>"; };
 		1DB772011E32556400AAF862 /* InfoPlist.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = InfoPlist.strings; sourceTree = "<group>"; };
-		1DFB04E71E321C7400810FF4 /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		1DFB04E71E321C7400810FF4 /* Animal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Animal.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,9 +109,10 @@
 			children = (
 				1D63DBA61E320AE8008143EF /* AppDelegate.swift */,
 				1D63DBA81E320AE8008143EF /* AnimalsViewController.swift */,
-				1DB771FD1E32305F00AAF862 /* ItemViewController.swift */,
-				1DFB04E71E321C7400810FF4 /* Item.swift */,
+				1DB771FD1E32305F00AAF862 /* AnimalDetailViewController.swift */,
+				1DFB04E71E321C7400810FF4 /* Animal.swift */,
 				1DB771FF1E324FBD00AAF862 /* RelaxViewController.swift */,
+				1D40524C1E56FFD800155815 /* UIButtonExtension.swift */,
 				1D63DBAC1E320AE8008143EF /* Main.storyboard */,
 				1D63DBAF1E320AE8008143EF /* Assets.xcassets */,
 				1D63DBB11E320AE8008143EF /* LaunchScreen.storyboard */,
@@ -274,10 +277,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				1DB772001E324FBD00AAF862 /* RelaxViewController.swift in Sources */,
-				1DFB04E81E321C7400810FF4 /* Item.swift in Sources */,
-				1DB771FE1E32305F00AAF862 /* ItemViewController.swift in Sources */,
+				1DFB04E81E321C7400810FF4 /* Animal.swift in Sources */,
+				1DB771FE1E32305F00AAF862 /* AnimalDetailViewController.swift in Sources */,
 				1D63DBA71E320AE8008143EF /* AppDelegate.swift in Sources */,
 				1D63DBA91E320AE8008143EF /* AnimalsViewController.swift in Sources */,
+				1D40524D1E56FFD800155815 /* UIButtonExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
