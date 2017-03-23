@@ -1,5 +1,3 @@
-# 3d-touch-tutorial-swift
-Project example related to the blog post on how to integrate 3D Touch API.
 ### 3D Touch Tutorial for Swift 3
 [![BuddyBuild](https://dashboard.buddybuild.com/api/statusImage?appID=58ad1da0b6bc0901002edae5&branch=master&build=latest)](https://dashboard.buddybuild.com/apps/58ad1da0b6bc0901002edae5/build/latest?branch=master)
 [![platform](https://img.shields.io/badge/platform-ios-lightgrey.svg?style=flat)](https://developer.apple.com/ios/)
